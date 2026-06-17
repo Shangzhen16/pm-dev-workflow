@@ -1,5 +1,7 @@
 # PM Dev Workflow
 
+**Stop AI coding agents from jumping straight into code.**
+
 A universal Claude Code / Codex skill that helps AI coding agents clarify requirements, plan, build, test, and hand off like product-minded engineers.
 
 一个适用于 **Claude Code / Codex / 其他 AI Coding Agent** 的通用开发工作流 Skill。
@@ -7,6 +9,15 @@ A universal Claude Code / Codex skill that helps AI coding agents clarify requir
 它让 AI 在写代码前先像产品经理一样工作：先确认需求、拆清范围、提示风险、制定计划，再开发、自测和交付。
 
 如果你经常遇到 AI 一上来就改代码、做偏需求、漏掉边界情况、交付后不知道怎么测试，这个 Skill 就是为你准备的。
+
+## What Changes
+
+| Without this skill | With PM Dev Workflow |
+|---|---|
+| Starts coding immediately | Clarifies the real goal first |
+| Misses user, scope, and edge cases | Defines user, MVP scope, risks, and success signal |
+| Produces code without a test path | Builds, self-tests, and hands off verification steps |
+| Easy to create rework | Keeps product and engineering aligned |
 
 ## 一句话说明
 
@@ -165,6 +176,8 @@ pm-dev-workflow/
 │   ├── before-after.md
 │   ├── sample-feature-request.md
 │   └── sample-delivery-output.md
+├── docs/
+│   └── social-posts.md
 └── agents/
     └── openai.yaml
 ```

@@ -1,5 +1,7 @@
 # PM Dev Workflow
 
+A universal Claude Code / Codex skill that helps AI coding agents clarify requirements, plan, build, test, and hand off like product-minded engineers.
+
 一个适用于 **Claude Code / Codex / 其他 AI Coding Agent** 的通用开发工作流 Skill。
 
 它让 AI 在写代码前先像产品经理一样工作：先确认需求、拆清范围、提示风险、制定计划，再开发、自测和交付。
@@ -46,6 +48,22 @@ AI：
 
 结果：AI 不只是“写代码”，而是帮你把需求推进成可交付的软件工作。
 
+## Quick Start
+
+1. 把整个文件夹复制到 `~/.claude/skills/` 或 `~/.codex/skills/`
+2. 重启一个新的 Claude Code / Codex 会话
+3. 开始时直接说：
+
+```text
+Use $pm-dev-workflow to help me build...
+```
+
+中文也可以：
+
+```text
+使用 $pm-dev-workflow 帮我做一个需求，从澄清、计划、开发到测试交付都按流程来。
+```
+
 ## Why This Exists
 
 Coding agents are fast, but they often jump into code before the requirement is clear. That creates rework, missed edge cases, weak acceptance criteria, and confusing handoffs.
@@ -75,6 +93,19 @@ The core workflow lives in `SKILL.md`. The `agents/openai.yaml` file is optional
 - 设计师 / 运营 / 非技术用户：让 AI 给出能看懂、能执行、能测试的交付步骤
 - 开发者：在写代码前增加一层轻量产品评审和交付检查
 
+## Good For
+
+- 新功能
+- MVP / 试错项目
+- 需要先澄清需求的任务
+- 需要测试步骤和交付说明的任务
+
+## Not Ideal For
+
+- 只改一个字、一个颜色、一个配置
+- 已经完全定好技术方案，只想直接执行
+- 不想让 AI 在开发前做任何澄清
+
 ## Example Prompts
 
 ```text
@@ -88,6 +119,12 @@ Use $pm-dev-workflow to add a Feed refresh prompt to my mobile H5 prototype.
 ```text
 Use $pm-dev-workflow to turn this rough requirement into a scoped MVP and then implement it.
 ```
+
+## Examples
+
+- [Before / After](examples/before-after.md)
+- [Sample feature request](examples/sample-feature-request.md)
+- [Sample delivery output](examples/sample-delivery-output.md)
 
 ## What The Skill Does
 
@@ -116,17 +153,6 @@ mkdir -p ~/.codex/skills
 cp -R pm-dev-workflow ~/.codex/skills/
 ```
 
-然后重启一个新的 Claude Code / Codex 会话，并这样使用：
-
-```text
-Use $pm-dev-workflow to help me build...
-```
-
-中文也可以：
-
-```text
-使用 $pm-dev-workflow 帮我做一个需求，从澄清、计划、开发到测试交付都按流程来。
-```
 
 ## Repository Structure
 
@@ -135,6 +161,10 @@ pm-dev-workflow/
 ├── SKILL.md
 ├── README.md
 ├── LICENSE
+├── examples/
+│   ├── before-after.md
+│   ├── sample-feature-request.md
+│   └── sample-delivery-output.md
 └── agents/
     └── openai.yaml
 ```
@@ -144,6 +174,10 @@ pm-dev-workflow/
 `SKILL.md` 是真正给 AI 读取的核心工作流。README 是给 GitHub 用户看的说明文档。
 
 `agents/openai.yaml` 是 Codex 的可选 UI 元数据。Claude Code 和其他 Agent 可以忽略它。
+
+## Version
+
+v0.1.0
 
 ## License
 

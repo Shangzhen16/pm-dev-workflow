@@ -1,0 +1,8 @@
+interface:
+  display_name: "PM Dev Workflow"
+  short_description: "需求澄清到自测交付的产品开发流程"
+  brand_color: "#2563EB"
+  default_prompt: "Use $pm-dev-workflow to turn this feature idea into a clear scoped plan, implementation, tests, and handoff."
+
+policy:
+  allow_implicit_invocation: true
